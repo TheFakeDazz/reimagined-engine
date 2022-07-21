@@ -11,4 +11,4 @@ def pi():
         else:
             e='1415926535897932384626433'
             t=e[0:w]
-            return f'3.{t}'
+            return float(f'3.{t}')
