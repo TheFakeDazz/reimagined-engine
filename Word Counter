@@ -1,0 +1,16 @@
+def word_count():
+    while True:
+        try:
+            y=input('Enter the full name of your file: ')
+            f=open(y)
+            j=f.read()
+            u=j.replace('\n', " ")
+            r=u.split(' ')
+            value=''
+            while value in r:
+                r.remove(value)
+            count=len(r)
+            return f'Word Count: {count}'
+            break
+        except FileNotFoundError:
+            print('Your file was not found')
