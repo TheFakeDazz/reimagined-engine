@@ -47,9 +47,13 @@ def prime_generator():
     mylist = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
     print('\n'*10)
     while True:
+        if len(mylist) == 0:
+            print('Out of numbers!')
+            break
         ask = input('Would you like to see the next prime number? (Type "yes" or "no"): ')
         print('\n'*100)
         if ask == 'yes':
             print(mylist.pop(0))
         elif ask == 'no':
             break
+
