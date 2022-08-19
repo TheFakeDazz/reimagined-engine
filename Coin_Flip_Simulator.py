@@ -2,7 +2,7 @@ from random import choice
 from collections import Counter
 
 
-def coin_flipper(num):
+def coin_flipper(num:int):
     choices = ['Heads', 'Tails']
     mylist = []
     for number in range(num):
