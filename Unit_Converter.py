@@ -3,6 +3,12 @@ This is a Unit Converter which converts certain units to another.
 """
 
 
+def screet(equation, unit):
+    total = equation
+    print(f"{total:f} {unit}")
+    quit()
+
+
 def unit_converter():
     """
 The main function for this
@@ -30,25 +36,19 @@ The main function for this
             if degrees_entrance == 'f':
                 while True:
                     try:
-                        degrees_f = float(input('Enter the degrees: '))
+                        enter_amount = float(input("Enter the amount of you would like to convert: "))
+                        screet((enter_amount - 32) / 1.8, 'C')
                     except ValueError:
                         print('Please enter a number')
-                    else:
-                        total = (degrees_f - 32) * 5 / 9
-                        print(f'{total} C')
-                        return
 
             # Celsius
             elif degrees_entrance == 'c':
                 while True:
                     try:
-                        degrees_c = float(input('Enter the degrees: '))
+                        enter_amount = float(input("Enter the amount of you would like to convert: "))
+                        screet(enter_amount * 1.8 + 32, 'F')
                     except ValueError:
                         print('Please enter a number')
-                    else:
-                        total = degrees_c * 9 / 5 + 32
-                        print(f'{total} F')
-                        return
 
         # Units of Measurement
         while choose == 'measurement':
@@ -73,65 +73,46 @@ The main function for this
                 if to_what == "centi":
                     while True:
                         try:
-                            enter_amount = float(
-                                input(
-                                    "Enter the amount of inches you would like to convert into centimeters: "
-                                ))
+                            enter_amount = float(input("Enter the amount of inches "
+                                                       "you would like to convert into centimeters: "))
+                            screet(enter_amount * 2.56, 'cm')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 2.56
-                            print(f"{total} cm")
-                            return
 
                 # Converting Inches to Millimeters
                 if to_what == "milli":
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of inches you would like to convert into millimeters: "
-                                ))
+                                input("Enter the amount of inches you would like to convert into millimeters: "))
+                            screet(enter_amount * 25.4, 'mm')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 25.4
-                            print(f"{total} mm")
-                            return
+
                 # Converting Inches to Feet
                 if to_what == "feet":
                     while True:
                         try:
-                            enter_amount = float(
-                                input(
-                                    "Enter the amount of inches you would like to convert into feet: "
-                                ))
+                            enter_amount = float(input(
+                                "Enter the amount of inches you would like to convert into feet: "))
+                            screet(enter_amount / 12, 'ft')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount / 12
-                            print(f"{total} ft")
-                            break
+
                 # Converting Inches to Kilometers
                 if to_what == "kilometer":
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of inches you would like to convert into centimeters: "
-                                ))
+                                input("Enter the amount of inches you would like to convert into centimeters: "))
+                            screet(enter_amount * .0000254, 'km')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * .0000254
-                            print(f"{total:f} km")
-                            return
+
             # Centimeters
             if measure_entrance == "centi":
-                to_what = input(
-                    'For inches, type "inch"\nFor millimeters, type "milli"\nFor feet, type "feet"\nFor '
-                    'Kilometers, type "kilometer"\nType "quit" to exit out\nTo What?: '
-                ).lower().strip()
+                to_what = input('For inches, type "inch"\nFor millimeters, type "milli"\nFor feet, type "feet"\nFor '
+                                'Kilometers, type "kilometer"\nType "quit" to exit out\nTo What?: ').lower().strip()
                 if to_what == "quit":
                     break
                 if to_what not in ['inch', 'milli', 'feet', 'kilometer']:
@@ -143,50 +124,39 @@ The main function for this
                         try:
                             enter_amount = float(
                                 input("Enter the amount of centimeters you would like to convert into inches: "))
+                            screet(enter_amount * .3937, 'in')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * .3937
-                            print(f"{total} in")
-                            return
 
                 # Converting Centimeters to Millimeters
                 if to_what == 'milli':
                     while True:
                         try:
-                            enter_amount = eval(
+                            enter_amount = float(
                                 input("Enter the amount of centimeters you would like to convert into millimeters: "))
+                            screet(enter_amount * 10, 'mm')
                         except NameError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 10
-                            print(f"{total} mm")
-                            return
 
                 # Converting Centimeters to Feet
                 if to_what == "feet":
                     while True:
                         try:
-                            enter_amount = eval(
+                            enter_amount = float(
                                 input("Enter the amount of centimeters you would like to convert into feet: "))
+                            screet(enter_amount / 30.48, 'ft')
                         except NameError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount / 30.48
-                            print(f"{total} ft")
-                            return
+
                 # Converting Centimeters to Kilometers
                 if to_what == "kilometer":
                     while True:
                         try:
-                            enter_amount = eval(input(
+                            enter_amount = float(input(
                                 "Enter the amount of centimeters you would like to convert into kilometers: "))
+                            screet(enter_amount * .00001, 'km')
                         except NameError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * .00001
-                            print(f"{total:f} km")
-                            return
 
             # Millimeters
             if measure_entrance == "milli":
@@ -204,56 +174,42 @@ The main function for this
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of millimeters you would like to convert into inches: "
-                                ))
+                                input("Enter the amount of millimeters you would like to convert into inches: "))
+                            screet(enter_amount * 25.4, 'in')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 25.4
-                            print(f"{total} in")
-                            return
+
                 # Converting Millimeters to Centimeters
                 if to_what == "centi":
                     while True:
                         try:
                             enter_amount = float(
                                 input(
-                                    "Enter the amount of millimeters you would like to convert into centimeters: "
-                                ))
+                                    "Enter the amount of millimeters you would like to convert into centimeters: "))
+                            screet(enter_amount / 10, 'cm')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount / 10
-                            print(f"{total} cm")
-                            return
+
                 # Converting Millimeters to Feet
                 if to_what == "feet":
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of millimeters you would like to convert into feet: "
-                                ))
+                                input("Enter the amount of millimeters you would like to convert into feet: "))
+                            screet(enter_amount / 304.8, 'ft')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount / 304.8
-                            print(f"{total:f} ft")
-                            return
+
                 # Converting Millimeters to Kilometers
                 if to_what == "kilometer":
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of millimeters you would like to convert into kilometers: "
-                                ))
+                                input("Enter the amount of millimeters you would like to convert into kilometers: "))
+                            screet(enter_amount * .00001, 'km')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * .00001
-                            print(f"{total:f} km")
+
             # Feet
             if measure_entrance == "feet":
                 to_what = input(
@@ -270,56 +226,41 @@ The main function for this
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of feet you would like to convert into inches: "
-                                ))
+                                input("Enter the amount of feet you would like to convert into inches: "))
+                            screet(enter_amount * 12, 'in')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 12
-                            print(f"{total} in")
+
                 # Converting Feet to Centimeters
                 if to_what == "centi":
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of feet you would like to convert into centimeters: "
-                                ))
+                                input("Enter the amount of feet you would like to convert into centimeters: "))
+                            screet(enter_amount * 30.48, 'cm')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 30.48
-                            print(f"{total} cm")
-                            return
+
                 # Converting Feet to Millimeters
                 if to_what == "milli":
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of feet you would like to convert into millimeters: "
-                                ))
+                                input("Enter the amount of feet you would like to convert into millimeters: "))
+                            screet(enter_amount * 304.8, 'mm')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 304.8
-                            print(f"{total} mm")
-                            break
+
                 # Converting feet to Kilometers
                 if to_what == "kilometer":
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of feet you would like to convert into kilometers: "
-                                ))
+                                input("Enter the amount of feet you would like to convert into kilometers: "))
+                            screet(enter_amount / 3280.8399, 'km')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount / 3280.8399
-                            print(f"{total:f} km")
-                            return
+
             # Kilometer
             if measure_entrance == "kilometer":
                 to_what = input(
@@ -336,57 +277,42 @@ The main function for this
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of kilometers you would like to convert into inches: "
-                                ))
+                                input("Enter the amount of kilometers you would like to convert into inches: "))
+                            screet(enter_amount * 39370.0787, 'in')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 39370.0787
-                            print(f"{total} in")
-                            break
+
                 # Converting Kilometer to Centimeters
                 if to_what == "centi":
                     while True:
                         try:
                             enter_amount = float(
                                 input(
-                                    "Enter the amount of kilometers you would like to convert into centimeters: "
-                                ))
+                                    "Enter the amount of kilometers you would like to convert into centimeters: "))
+                            screet(enter_amount * 100000, 'cm')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 100000
-                            print(f"{total} cm")
-                            return
+
                 # Converting Kilometer to Millimeters
                 if to_what == "milli":
                     while True:
                         try:
                             enter_amount = float(
                                 input(
-                                    "Enter the amount of kilometers you would like to convert into millimeters: "
-                                ))
+                                    "Enter the amount of kilometers you would like to convert into millimeters: "))
+                            screet(enter_amount * 1000000, 'mm')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 1000000
-                            print(f"{total} mm")
-                            return
+
                 # Converting Kilometer to Feet
                 if to_what == "feet":
                     while True:
                         try:
                             enter_amount = float(
-                                input(
-                                    "Enter the amount of kilometers you would like to convert into feet: "
-                                ))
+                                input("Enter the amount of kilometers you would like to convert into feet: "))
+                            screet(enter_amount * 3280.8399, 'ft')
                         except ValueError:
                             print('Please enter a number')
-                        else:
-                            total = enter_amount * 3280.8399
-                            print(f"{total} ft")
-                            return
 
         # Units of Time
         while choose == 'time':
@@ -410,44 +336,30 @@ The main function for this
                     if to_what == "minute":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the hours you would like to convert into minutes: "
-                                    ))
+                                enter_amount = float(input("Enter the hours you would like to convert into minutes: "))
+                                screet(enter_amount * 60, 'minute')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount * 60
-                                print(f"{total} minutes")
-                                return
+
                     # Converting hours to days
                     if to_what == "days":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the hours you would like to convert into days: "
-                                    ))
+                                enter_amount = float(input("Enter the hours you would like to convert into days: "))
+                                screet(enter_amount / 24, 'days')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount / 24
-                                print(f"{total} day(s)")
-                                return
+
                     # Converting hours to seconds
                     if to_what == "seconds":
                         while True:
                             try:
                                 enter_amount = float(
-                                    input(
-                                        "Enter the hours you would like to convert into seconds: "
-                                    ))
+                                    input("Enter the hours you would like to convert into seconds: "))
+                                screet(enter_amount * 3600, 'seconds')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount * 3600
-                                print(f"{total} seconds")
-                                return
+
                 # Minutes
                 if time_entrance == "minute":
                     to_what = input(
@@ -462,44 +374,29 @@ The main function for this
                     if to_what == "hours":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the minutes you would like to convert into hours: "
-                                    ))
+                                enter_amount = float(input("Enter the minutes you would like to convert into hours: "))
+                                screet(enter_amount / 60, 'hours')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount / 60
-                                print(f"{total} hours")
-                                return
+
                     # Converting minutes to days
                     if to_what == "days":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the minutes you would like to convert into days: "
-                                    ))
+                                enter_amount = float(input("Enter the minutes you would like to convert into days: "))
+                                screet(enter_amount / 1440, 'day(s)')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount / 1440
-                                print(f"{total} day(s)")
-                                return
+
                     # Converting minutes to seconds
                     if to_what == "seconds":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the minutes you would like to convert into days: "
-                                    ))
+                                enter_amount = float(input("Enter the minutes you would like to convert into seconds: "))
+                                screet(enter_amount * 60, 'seconds')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount * 60
-                                print(f"{total} seconds")
-                                return
+
                 # Seconds
                 if time_entrance == "seconds":
                     to_what = input(
@@ -514,44 +411,29 @@ The main function for this
                     if to_what == "hours":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the seconds you would like to convert into hours: "
-                                    ))
+                                enter_amount = float(input("Enter the seconds you would like to convert into hours: "))
+                                screet(enter_amount / 3600, 'hours')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount / 3600
-                                print(f"{total:f} hours")
-                                return
+
                     # Converting seconds to days
                     if to_what == "days":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the seconds you would like to convert into days: "
-                                    ))
+                                enter_amount = float(input("Enter the seconds you would like to convert into days: "))
+                                screet(enter_amount / 86400, 'day(s)')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount / 86400
-                                print(f"{total:f} day(s)")
-                                return
+
                     # Converting seconds to minutes
                     if to_what == "minute":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the seconds you would like to convert into minutes: "
-                                    ))
+                                enter_amount = float(input("Enter the seconds you would like to convert into minutes: "))
+                                screet(enter_amount / 60, 'minutes')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount / 60
-                                print(f"{total} minutes")
-                                return
+
                 # Days
                 if time_entrance == "days":
                     to_what = input(
@@ -568,45 +450,28 @@ The main function for this
                     if to_what == "hours":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the days you would like to convert into hours: "
-                                    ))
+                                enter_amount = float(input("Enter the days you would like to convert into hours: "))
+                                screet(enter_amount * 24, 'hours')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount * 24
-                                print(f"{total} hours")
-                                return
+
                     # Converting days to seconds
                     if to_what == "seconds":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the days you would like to convert into seconds: "
-                                    ))
+                                enter_amount = float(input("Enter the days you would like to convert into seconds: "))
+                                screet(enter_amount * 86400, 'seconds')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount * 86400
-                                print(f"{total} seconds")
-                                return
 
                     # Converting days to minutes
                     if to_what == "minute":
                         while True:
                             try:
-                                enter_amount = float(
-                                    input(
-                                        "Enter the days you would like to convert into minutes: "
-                                    ))
+                                enter_amount = float(input("Enter the days you would like to convert into minutes: "))
+                                screet(enter_amount * 1440, 'minutes')
                             except ValueError:
                                 print('Please enter a number')
-                            else:
-                                total = enter_amount * 1440
-                                print(f"{total} minutes")
-                                return
 
         if choose == "quit":
             break
