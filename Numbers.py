@@ -55,4 +55,24 @@ def prime_generator():
             print(mylist.pop(0))
         elif ask == 'no':
             break
-
+#-------------------------------------------Collatz Conjecture---------------------------------------------------------------------------------------------------------
+def steps(number):
+    num = 0
+    if number <= 0:
+        raise ValueError("Only positive integers are allowed")
+    print(f'{num}. {number}')
+    if number == 1:
+        return 0
+    while number != 1:
+        if number%2 == 0:
+            num+=1
+            number = number/2
+            print(f'{num}. {number}')
+            if number == 1:
+                return num
+        if number%2 != 0:
+            num+=1
+            number = 3 * number + 1
+            print(f'{num}. {number}')
+            if number == 1:
+                return num
