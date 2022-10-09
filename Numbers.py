@@ -76,3 +76,14 @@ def steps(number):
             print(f'{num}. {number}')
             if number == 1:
                 return num
+#------------------------------------------------------Armstrong Numbers-----------------------------------------------------------------------------------------------
+def is_armstrong_number(number):
+    w = len(str(number))
+    u = []
+    for n in str(number):
+        n = int(n)**w
+        u.append(n)
+    if sum(u) == number:
+        return True
+    else:
+        return False
