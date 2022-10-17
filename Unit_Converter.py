@@ -5,7 +5,7 @@ This is a Unit Converter which converts certain units to another.
 
 def screet(equation, unit):
     total = equation
-    return f"{total:f} {unit}"
+    print(f"{total:f} {unit}")
     quit()
 
 
@@ -19,7 +19,7 @@ The main function for this
             'Type "quit" to exit out\nTemperature, Measurement, or Time?: '
         ).lower()
         if choose not in ['temperature', 'measurement', 'time', 'quit']:
-            return 'Please enter a valid category'
+            print('Please enter a valid category')
             continue
         # Units of Temperature
         while choose == 'temperature':
@@ -29,7 +29,7 @@ The main function for this
             if degrees_entrance == "quit":
                 break
             elif degrees_entrance not in ['c', 'f']:
-                return 'Please enter a valid temperature unit'
+                print('Please enter a valid temperature unit')
                 continue
 
             # Fahrenheit
@@ -39,7 +39,7 @@ The main function for this
                         enter_amount = float(input("Enter the amount of you would like to convert: "))
                         screet((enter_amount - 32) / 1.8, 'C')
                     except ValueError:
-                        return 'Please enter a number'
+                        print('Please enter a number')
 
             # Celsius
             elif degrees_entrance == 'c':
@@ -48,7 +48,7 @@ The main function for this
                         enter_amount = float(input("Enter the amount of you would like to convert: "))
                         screet(enter_amount * 1.8 + 32, 'F')
                     except ValueError:
-                        return 'Please enter a number'
+                        print('Please enter a number')
 
         # Units of Measurement
         while choose == 'measurement':
@@ -67,7 +67,7 @@ The main function for this
                 if to_what == "quit":
                     break
                 if to_what not in ['centi', 'milli', 'feet', 'kilometer']:
-                    return 'Please Enter a Valid Conversion Unit'
+                    print('Please Enter a Valid Conversion Unit')
                     continue
                 # Converting Inches to Centimeters
                 if to_what == "centi":
@@ -77,7 +77,7 @@ The main function for this
                                                        "you would like to convert into centimeters: "))
                             screet(enter_amount * 2.56, 'cm')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Inches to Millimeters
                 if to_what == "milli":
@@ -87,7 +87,7 @@ The main function for this
                                 input("Enter the amount of inches you would like to convert into millimeters: "))
                             screet(enter_amount * 25.4, 'mm')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Inches to Feet
                 if to_what == "feet":
@@ -97,7 +97,7 @@ The main function for this
                                 "Enter the amount of inches you would like to convert into feet: "))
                             screet(enter_amount / 12, 'ft')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Inches to Kilometers
                 if to_what == "kilometer":
@@ -107,7 +107,7 @@ The main function for this
                                 input("Enter the amount of inches you would like to convert into centimeters: "))
                             screet(enter_amount * .0000254, 'km')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
             # Centimeters
             if measure_entrance == "centi":
@@ -116,7 +116,7 @@ The main function for this
                 if to_what == "quit":
                     break
                 if to_what not in ['inch', 'milli', 'feet', 'kilometer']:
-                    return 'Please Enter a Valid Conversion Unit'
+                    print('Please Enter a Valid Conversion Unit')
                     continue
                 # Converting centi to inches
                 if to_what == 'inch':
@@ -126,7 +126,7 @@ The main function for this
                                 input("Enter the amount of centimeters you would like to convert into inches: "))
                             screet(enter_amount * .3937, 'in')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Centimeters to Millimeters
                 if to_what == 'milli':
@@ -136,7 +136,7 @@ The main function for this
                                 input("Enter the amount of centimeters you would like to convert into millimeters: "))
                             screet(enter_amount * 10, 'mm')
                         except NameError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Centimeters to Feet
                 if to_what == "feet":
@@ -146,7 +146,7 @@ The main function for this
                                 input("Enter the amount of centimeters you would like to convert into feet: "))
                             screet(enter_amount / 30.48, 'ft')
                         except NameError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Centimeters to Kilometers
                 if to_what == "kilometer":
@@ -156,7 +156,7 @@ The main function for this
                                 "Enter the amount of centimeters you would like to convert into kilometers: "))
                             screet(enter_amount * .00001, 'km')
                         except NameError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
             # Millimeters
             if measure_entrance == "milli":
@@ -167,7 +167,7 @@ The main function for this
                 if to_what == "quit":
                     break
                 if to_what not in ['kilometer', 'centi', 'feet', 'inch']:
-                    return 'Please Enter a Valid Conversion Unit'
+                    print('Please Enter a Valid Conversion Unit')
                     continue
                 # Converting Millimeters to Inches
                 if to_what == "inch":
@@ -177,7 +177,7 @@ The main function for this
                                 input("Enter the amount of millimeters you would like to convert into inches: "))
                             screet(enter_amount * 25.4, 'in')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Millimeters to Centimeters
                 if to_what == "centi":
@@ -188,7 +188,7 @@ The main function for this
                                     "Enter the amount of millimeters you would like to convert into centimeters: "))
                             screet(enter_amount / 10, 'cm')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Millimeters to Feet
                 if to_what == "feet":
@@ -198,7 +198,7 @@ The main function for this
                                 input("Enter the amount of millimeters you would like to convert into feet: "))
                             screet(enter_amount / 304.8, 'ft')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Millimeters to Kilometers
                 if to_what == "kilometer":
@@ -208,7 +208,7 @@ The main function for this
                                 input("Enter the amount of millimeters you would like to convert into kilometers: "))
                             screet(enter_amount * .00001, 'km')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
             # Feet
             if measure_entrance == "feet":
@@ -219,7 +219,7 @@ The main function for this
                 if to_what == "quit":
                     break
                 if to_what not in ['kilometer', 'centi', 'milli', 'inch']:
-                    return 'Please Enter a Valid Conversion Unit'
+                    print('Please Enter a Valid Conversion Unit')
                     continue
                 # Converting Feet to Inches
                 if to_what == "inch":
@@ -229,7 +229,7 @@ The main function for this
                                 input("Enter the amount of feet you would like to convert into inches: "))
                             screet(enter_amount * 12, 'in')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Feet to Centimeters
                 if to_what == "centi":
@@ -239,7 +239,7 @@ The main function for this
                                 input("Enter the amount of feet you would like to convert into centimeters: "))
                             screet(enter_amount * 30.48, 'cm')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Feet to Millimeters
                 if to_what == "milli":
@@ -249,7 +249,7 @@ The main function for this
                                 input("Enter the amount of feet you would like to convert into millimeters: "))
                             screet(enter_amount * 304.8, 'mm')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting feet to Kilometers
                 if to_what == "kilometer":
@@ -259,7 +259,7 @@ The main function for this
                                 input("Enter the amount of feet you would like to convert into kilometers: "))
                             screet(enter_amount / 3280.8399, 'km')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
             # Kilometer
             if measure_entrance == "kilometer":
@@ -270,7 +270,7 @@ The main function for this
                 if to_what == "quit":
                     break
                 if to_what not in ['feet', 'centi', 'milli', 'inch']:
-                    return 'Please Enter a Valid Conversion Unit'
+                    print('Please Enter a Valid Conversion Unit')
                     continue
                 # Converting Kilometer to Inches
                 if to_what == "inch":
@@ -280,7 +280,7 @@ The main function for this
                                 input("Enter the amount of kilometers you would like to convert into inches: "))
                             screet(enter_amount * 39370.0787, 'in')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Kilometer to Centimeters
                 if to_what == "centi":
@@ -291,7 +291,7 @@ The main function for this
                                     "Enter the amount of kilometers you would like to convert into centimeters: "))
                             screet(enter_amount * 100000, 'cm')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Kilometer to Millimeters
                 if to_what == "milli":
@@ -302,7 +302,7 @@ The main function for this
                                     "Enter the amount of kilometers you would like to convert into millimeters: "))
                             screet(enter_amount * 1000000, 'mm')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
                 # Converting Kilometer to Feet
                 if to_what == "feet":
@@ -312,7 +312,7 @@ The main function for this
                                 input("Enter the amount of kilometers you would like to convert into feet: "))
                             screet(enter_amount * 3280.8399, 'ft')
                         except ValueError:
-                            return 'Please enter a number'
+                            print('Please enter a number')
 
         # Units of Time
         while choose == 'time':
@@ -330,16 +330,16 @@ The main function for this
                     if to_what == "quit":
                         break
                     if to_what not in ['minute', 'days', 'seconds' 'quit']:
-                        return 'Please Enter a Valid Conversion Unit'
+                        print('Please Enter a Valid Conversion Unit')
                         continue
                     # Converting hours to minutes
                     if to_what == "minute":
                         while True:
                             try:
                                 enter_amount = float(input("Enter the hours you would like to convert into minutes: "))
-                                screet(enter_amount * 60, 'minute')
+                                screet(enter_amount * 60, 'minutes')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                     # Converting hours to days
                     if to_what == "days":
@@ -348,7 +348,7 @@ The main function for this
                                 enter_amount = float(input("Enter the hours you would like to convert into days: "))
                                 screet(enter_amount / 24, 'days')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                     # Converting hours to seconds
                     if to_what == "seconds":
@@ -358,7 +358,7 @@ The main function for this
                                     input("Enter the hours you would like to convert into seconds: "))
                                 screet(enter_amount * 3600, 'seconds')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                 # Minutes
                 if time_entrance == "minute":
@@ -368,7 +368,7 @@ The main function for this
                     if to_what == "quit":
                         break
                     if to_what not in ['seconds', 'days', 'hours', 'quit']:
-                        return 'Please Enter a Valid Conversion Unit'
+                        print('Please Enter a Valid Conversion Unit')
                         continue
                     # Converting minutes to hours
                     if to_what == "hours":
@@ -377,7 +377,7 @@ The main function for this
                                 enter_amount = float(input("Enter the minutes you would like to convert into hours: "))
                                 screet(enter_amount / 60, 'hours')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                     # Converting minutes to days
                     if to_what == "days":
@@ -386,7 +386,7 @@ The main function for this
                                 enter_amount = float(input("Enter the minutes you would like to convert into days: "))
                                 screet(enter_amount / 1440, 'day(s)')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                     # Converting minutes to seconds
                     if to_what == "seconds":
@@ -395,7 +395,7 @@ The main function for this
                                 enter_amount = float(input("Enter the minutes you would like to convert into seconds: "))
                                 screet(enter_amount * 60, 'seconds')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                 # Seconds
                 if time_entrance == "seconds":
@@ -405,7 +405,7 @@ The main function for this
                     if to_what == "quit":
                         break
                     if to_what not in ['minute', 'days', 'hours', 'quit']:
-                        return 'Please Enter a Valid Conversion Unit'
+                        print('Please Enter a Valid Conversion Unit')
                         continue
                     # Converting seconds to hours
                     if to_what == "hours":
@@ -414,7 +414,7 @@ The main function for this
                                 enter_amount = float(input("Enter the seconds you would like to convert into hours: "))
                                 screet(enter_amount / 3600, 'hours')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                     # Converting seconds to days
                     if to_what == "days":
@@ -423,7 +423,7 @@ The main function for this
                                 enter_amount = float(input("Enter the seconds you would like to convert into days: "))
                                 screet(enter_amount / 86400, 'day(s)')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                     # Converting seconds to minutes
                     if to_what == "minute":
@@ -432,7 +432,7 @@ The main function for this
                                 enter_amount = float(input("Enter the seconds you would like to convert into minutes: "))
                                 screet(enter_amount / 60, 'minutes')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                 # Days
                 if time_entrance == "days":
@@ -444,7 +444,7 @@ The main function for this
                     if to_what == "quit":
                         break
                     if to_what not in ['minute', 'seconds', 'hours', 'quit']:
-                        return 'Please Enter a Valid Conversion Unit'
+                        print('Please Enter a Valid Conversion Unit')
                         continue
                     # Converting Days to hours
                     if to_what == "hours":
@@ -453,7 +453,7 @@ The main function for this
                                 enter_amount = float(input("Enter the days you would like to convert into hours: "))
                                 screet(enter_amount * 24, 'hours')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                     # Converting days to seconds
                     if to_what == "seconds":
@@ -462,7 +462,7 @@ The main function for this
                                 enter_amount = float(input("Enter the days you would like to convert into seconds: "))
                                 screet(enter_amount * 86400, 'seconds')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
                     # Converting days to minutes
                     if to_what == "minute":
@@ -471,10 +471,10 @@ The main function for this
                                 enter_amount = float(input("Enter the days you would like to convert into minutes: "))
                                 screet(enter_amount * 1440, 'minutes')
                             except ValueError:
-                                return 'Please enter a number'
+                                print('Please enter a number')
 
         if choose == "quit":
             break
 
 
-unit_converter()
+print(unit_converter())
