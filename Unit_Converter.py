@@ -5,7 +5,7 @@ This is a Unit Converter which converts certain units to another.
 
 def screet(equation, unit):
     total = equation
-    print(f"{total:f} {unit}")
+    return f"{total:f} {unit}"
     quit()
 
 
