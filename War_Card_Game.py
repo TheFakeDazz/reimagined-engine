@@ -1,3 +1,4 @@
+
 import random
 
 
@@ -88,11 +89,9 @@ def war():
             i+=1
             print(f'Round {i}')
             if len(player_1) == 0:
-                print('Player 1 runs out of cards,\nPlayer 2 Wins the Game!')
-                return
+                return 'Player 1 runs out of cards,\nPlayer 2 Wins the Game!'
             if len(player_2) == 0:
-                print('Player 2 runs out of cards,\nPlayer 1 Wins the Game!')
-                return
+                return 'Player 2 runs out of cards,\nPlayer 1 Wins the Game!'
             shell = player_1.pop(0)
             earth = player_2.pop(0)
             
@@ -101,11 +100,20 @@ def war():
                 print('Player 1 asserts his dominance by taking both cards!\n')
                 player_1.append(earth)
                 player_1.append(shell)
-                continue
+                canContinue = input('Continue? (Y/N)')
+                if canContinue.lower() == 'y':
+                    continue
+                elif canContinue.lower() == 'n':
+                    return 'Game Ended'
             elif rank_defined[shell.rank] < rank_defined[earth.rank]:
                 print('Player 2 asserts his dominance by taking both cards!\n')
                 player_2.append(earth)
                 player_2.append(shell)
-                continue
+                canContinue = input('Continue? (Y/N)')
+                if canContinue.lower() == 'y':
+                    continue
+                elif canContinue.lower() == 'n':
+                    return 'Game Ended'
             if rank_defined[shell.rank] == rank_defined[earth.rank]:
                 tie()
+print(war())
